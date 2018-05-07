@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: A simple Hello World Serverless project
+Resources:
+  one:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: go1.x
+      Handler: one/one
+      CodeUri: .
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /one
+            Method: get
+  two:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: go1.x
+      Handler: two/two
+      CodeUri: .
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /two
+            Method: get
